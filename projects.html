@@ -7,7 +7,7 @@
     <title>Projects</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="styles.css">
     <style>
         .bd-placeholder-img {
           font-size: 1.125rem;
@@ -23,6 +23,20 @@
           }
         }
       </style>
+
+      <script>
+    var balls = document.getElementsByClassName("ball");
+    document.onmousemove = () => {
+      var x = (event.clientX * 100) / window.innerWidth + "%";
+      var y = (event.clientY * 100) / window.innerHeight + "%";
+
+      for (let i = 0; i < 2; i++) {
+        balls[i].style.left = x;
+        balls[i].style.top = y;
+        balls[i].transfoorm = "translate(-" + x + ",-" + y + ")";
+      }
+    };
+  </script>
 </head>
 <body>
     <header>
@@ -56,16 +70,29 @@
     <main class="flex-shrink-0">
 <!-- Start carousel -->
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="height: 500px;">
       <div class="carousel-item active" data-bs-interval="8000">
-        <img src="shaiah-emigh-doyle.png" class="d-block w-100" alt="...">
+        <img src="eyes-carousel.png" class="d-block w-100" alt="...">
+
       </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="shaiah-emigh-doyle.png" class="d-block w-100" alt="...">
+      <div class="carousel-item" 
+      <!-- data-bs-interval="2000" -->
+      >
+        <img src="pacmen-carousel.png" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="shaiah-emigh-doyle.png" class="d-block w-100" alt="...">
-       
+        <img src="realtime-bus-carousel.png" class="d-block w-100" alt="..." style="height: 500px;">
+        <!-- Start eyes -->
+        <!-- <div class="eyes d-block w-100">
+          <div class="eye">
+            <div class="ball"></div>
+          </div>
+          <div class="eye">
+            <div class="ball"></div>
+          </div>
+        </div> -->
+
+        <!-- End Eyes -->
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -81,29 +108,39 @@
     <!-- Start columns -->
    
     <div class="container marketing">
-    <div class="container">
+    <div class="container" style="margin-bottom: 60px;">
         <!-- Three columns of text below the carousel -->
         <div class="row" style="margin: 20px";>
           <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-    
-            <h2>Heading</h2>
-            <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+    <!-- Image -->
+<img src="realtime-bus.png" alt="bus exercise" style="border-radius: 50%; width: 140px; height: 140px"; />
+    <!-- End Image -->
+            <h2>Reatime bus tracker</h2>
+            <p>Using data sourced from the  <a href="https://www.mbta.com/">MBTA</a>, this program displays realtime location of buses traveling between Harvard University and MIT. </p>
+            <p><a class="btn btn-dark" href="https://github.com/ShaiahWren/Realtime-Bus-Tracker" target="__blank">On Github &raquo;</a> 
+              <a class="btn btn-dark" target="__blank" href="#">Live</a>
+
+            </p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+            <img src="pacmen.png" alt="bus exercise" style="border-radius: 50%; width: 140px; height: 140px"; />
     
-            <h2>Heading</h2>
-            <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <h2>Pacman factory</h2>
+            <p>This program is a 'pacman factory' in which simulated pacmen emerge from the top left of the webpage. Javascript animation creates the effect of bouncing and chomping.</p>
+            <p><a class="btn btn-dark" href="https://github.com/ShaiahWren/Pacman-Factory" target="__blank">On Github &raquo;</a>
+              <a class="btn btn-dark" target="__blank" href="#">Live</a>
+
+            </p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+            <img src="eyes.png" alt="bus exercise" style="border-radius: 50%; width: 140px; height: 140px"; /> 
     
-            <h2>Heading</h2>
-            <p>And lastly this, the third column of representative placeholder content.</p>
-            <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+            <h2>Googley Eyes</h2>
+            <p>This program tracks the movement of a pair of 'eyes' with JavaScript animation and mouse-movement tracking.</p>
+            <p><a class="btn btn-dark" href="https://github.com/ShaiahWren/googley-eyes" target="__blank">On Github &raquo;</a>             
+              <a class="btn btn-dark" target="__blank" href="/Eyes/index.html">Live</a>
+            </p>
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
       
